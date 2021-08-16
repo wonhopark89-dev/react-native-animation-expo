@@ -4,16 +4,16 @@ import { StyleSheet } from "react-native";
 import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
 
-export default function TabFourScreen() {
+export default function TabFloatingScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Four</Text>
+      <Text style={styles.title}>Tab Floating</Text>
       <View
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <EditScreenInfo path="/screens/TabFourScreen.tsx" />
+      <EditScreenInfo path="/screens/TabFloatingScreen.tsx" />
     </View>
   );
 }
@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "pink",
   },
   title: {
     fontSize: 20,

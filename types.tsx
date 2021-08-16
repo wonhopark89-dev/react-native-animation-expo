@@ -13,6 +13,7 @@ export type BottomTabParamList = {
   TabTwo: undefined;
   TabThree: undefined;
   TabFour: undefined;
+  TabFloating: undefined;
 };
 
 export type TabOneParamList = {
@@ -29,4 +30,8 @@ export type TabThreeParamList = {
 
 export type TabFourParamList = {
   TabFourScreen: undefined;
+};
+
+export type TabFloatingParamList = {
+  TabFloatingScreen: undefined;
 };
