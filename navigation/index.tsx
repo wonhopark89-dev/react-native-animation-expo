@@ -8,7 +8,10 @@ import {
   DefaultTheme,
   NavigationContainer,
 } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import {
+  createStackNavigator,
+  StackNavigationProp,
+} from "@react-navigation/stack";
 import * as React from "react";
 import { ColorSchemeName } from "react-native";
 
@@ -16,6 +19,7 @@ import NotFoundScreen from "../screens/NotFoundScreen";
 import { RootStackParamList } from "../types";
 import BottomTabNavigator from "./BottomTabNavigator";
 import LinkingConfiguration from "./LinkingConfiguration";
+import IndicatorTutorialStackNavigator from "./IndicatorTutorialNavigator";
 
 export default function Navigation({
   colorScheme,
@@ -36,6 +40,8 @@ export default function Navigation({
 // Read more here: https://reactnavigation.org/docs/modal
 const Stack = createStackNavigator<RootStackParamList>();
 
+export type RootStackNavigationProp = StackNavigationProp<RootStackParamList>;
+
 function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -44,6 +50,10 @@ function RootNavigator() {
         name="NotFound"
         component={NotFoundScreen}
         options={{ title: "Oops!" }}
+      />
+      <Stack.Screen
+        name={"IndicatorTutorialScreen"}
+        component={IndicatorTutorialStackNavigator}
       />
     </Stack.Navigator>
   );
