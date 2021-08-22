@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import slides from "./slides";
 import OnboardingItem from "./OnboardingItem";
+import Paginator from "./Paginator";
 
 const styles = StyleSheet.create({
   container: {
@@ -62,6 +63,7 @@ const Onboarding = () => {
           ref={slidesRef}
         />
       </View>
+      <Paginator data={slides} scrollX={scrollX} />
     </View>
   );
 };
