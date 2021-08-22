@@ -20,6 +20,7 @@ import { RootStackParamList } from "../types";
 import BottomTabNavigator from "./BottomTabNavigator";
 import LinkingConfiguration from "./LinkingConfiguration";
 import IndicatorTutorialStackNavigator from "./IndicatorTutorialNavigator";
+import LottieStackNavigator from "./LottieNavigator";
 
 export default function Navigation({
   colorScheme,
@@ -55,6 +56,7 @@ function RootNavigator() {
         name={"IndicatorTutorialScreen"}
         component={IndicatorTutorialStackNavigator}
       />
+      <Stack.Screen name={"LottieScreen"} component={LottieStackNavigator} />
     </Stack.Navigator>
   );
 }

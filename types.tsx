@@ -7,6 +7,7 @@ export type RootStackParamList = {
   Root: undefined;
   NotFound: undefined;
   IndicatorTutorialScreen: undefined;
+  LottieScreen: undefined;
 };
 
 export type BottomTabParamList = {

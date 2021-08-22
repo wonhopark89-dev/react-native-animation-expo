@@ -13,6 +13,9 @@ export default function TabTwoScreen() {
       >
         <Text>{`Indicator Tutorial...`}</Text>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => rootNavigation.navigate("LottieScreen")}>
+        <Text>{`Lottie...`}</Text>
+      </TouchableOpacity>
     </View>
   );
 }
