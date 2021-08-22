@@ -10,6 +10,7 @@ import {
 import slides from "./slides";
 import OnboardingItem from "./OnboardingItem";
 import Paginator from "./Paginator";
+import NextButton from "./NextButton";
 
 const styles = StyleSheet.create({
   container: {
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
 const Onboarding = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const scrollX = useRef<Animated.Value>(new Animated.Value(0)).current;
-  const slidesRef = useRef(null);
+  const slidesRef = useRef<FlatList>(null);
 
   const viewableItemsChanged = useRef<
     (info: {
@@ -39,6 +40,14 @@ const Onboarding = () => {
   const viewConfig = useRef<ViewabilityConfig>({
     viewAreaCoveragePercentThreshold: 50,
   }).current;
+
+  const scrollTo = () => {
+    if (currentIndex < slides.length - 1) {
+      slidesRef.current?.scrollToIndex({ index: currentIndex + 1 });
+    } else {
+      console.log("Last item.");
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -64,6 +73,10 @@ const Onboarding = () => {
         />
       </View>
       <Paginator data={slides} scrollX={scrollX} />
+      <NextButton
+        scrollTo={scrollTo}
+        percentage={(currentIndex + 1) * (100 / slides.length)}
+      />
     </View>
   );
 };
